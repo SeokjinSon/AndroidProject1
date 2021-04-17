@@ -32,12 +32,14 @@ public class FragmentHome<MaterialCalendarView> extends Fragment {
     // View Value
     private CalendarView calendar;
     private TextView dateValue;
+    private TextView selectedDate;
 
     private CalendarView.OnDateChangeListener changeCalendar = new CalendarView.OnDateChangeListener() {
         @Override
         public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
             String date = year + "/" + (month+1) + "/" + dayOfMonth;
             dateValue.setText(date);
+            selectedDate.setVisibility(View.VISIBLE);
         }
     };
 
@@ -54,6 +56,7 @@ public class FragmentHome<MaterialCalendarView> extends Fragment {
     }
 
     public void init(ViewGroup rootView) {
+        selectedDate = (TextView) rootView.findViewById(R.id.selectedDate);
         calendar = (CalendarView)rootView.findViewById(R.id.calendarView);
         dateValue = (TextView)rootView.findViewById(R.id.selectedDate);
     }
