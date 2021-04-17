@@ -3,4 +3,5 @@
     <string name="navigation_label1">Home</string>
     <string name="navigation_label2">Search</string>
     <string name="navigation_label3">MyPage</string>
+    <string name="home_title">나의 일정</string>
 </resources>
